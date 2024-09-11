@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "r57pk98aMN2jPgfKimycSonD3tDJh/COnAgHSdi5AuwEcOTJwZFxQkZbd0vu39YPjL8jwkOMK+wQmZmC5Guz7g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\amori\\Original\\PDFReaderConsoleApp\\PDFReaderConsoleApp\\PDFReaderConsoleApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\amori\\.nuget\\packages\\pdfpig\\0.1.9-alpha-20240910-4845f\\pdfpig.0.1.9-alpha-20240910-4845f.nupkg.sha512"
+  ],
+  "logs": []
+}
