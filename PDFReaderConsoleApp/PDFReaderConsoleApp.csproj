@@ -11,4 +11,11 @@
       <PackageReference Include="PdfPig" Version="0.1.9-alpha-20240910-4845f" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="Data\Simple_doc_Helvetica_Neue_Font.pdf" />
+      <Content Include="Data\Simple_doc_Helvetica_Neue_Font.pdf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>

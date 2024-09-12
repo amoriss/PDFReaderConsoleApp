@@ -21,3 +21,5 @@ C:\Users\amori\Original\PDFReaderConsoleApp\PDFReaderConsoleApp\obj\Debug\net8.0
 C:\Users\amori\Original\PDFReaderConsoleApp\PDFReaderConsoleApp\obj\Debug\net8.0\PDFReaderConsoleApp.pdb
 C:\Users\amori\Original\PDFReaderConsoleApp\PDFReaderConsoleApp\obj\Debug\net8.0\PDFReaderConsoleApp.genruntimeconfig.cache
 C:\Users\amori\Original\PDFReaderConsoleApp\PDFReaderConsoleApp\obj\Debug\net8.0\ref\PDFReaderConsoleApp.dll
+C:\Users\amori\Original\PDFReaderConsoleApp\PDFReaderConsoleApp\obj\Debug\net8.0\PDFReaderConsoleApp.sourcelink.json
+C:\Users\amori\Original\PDFReaderConsoleApp\PDFReaderConsoleApp\bin\Debug\net8.0\Data\Simple_doc_Helvetica_Neue_Font.pdf
