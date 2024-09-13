@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PDFReaderConsoleApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b75438394dc73e13e6949c07f0bed7a02e35c02")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fed2227532a95b5b2a7d0da63f320798aeed5311")]
 [assembly: System.Reflection.AssemblyProductAttribute("PDFReaderConsoleApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PDFReaderConsoleApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

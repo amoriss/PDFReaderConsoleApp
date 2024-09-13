@@ -13,7 +13,11 @@
 
     <ItemGroup>
       <None Remove="Data\Simple_doc_Helvetica_Neue_Font.pdf" />
-      <Content Include="Data\Simple_doc_Helvetica_Neue_Font.pdf">
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Data\FakeResume_1.pdf" />
+      <Content Include="Data\FakeResume_1.pdf">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
     </ItemGroup>
