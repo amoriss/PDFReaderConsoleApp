@@ -11,9 +11,10 @@ public class PDFReader
     {
         string relativePath =
             Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "FakeResume_1.pdf");
-        bool usesCSharp = true;
-        bool usesVisualStudio = true;
-        bool usesSQL = true;
+        bool usesCSharp = false;
+        bool usesVisualStudio = false;
+        bool usesSql = false;
+        bool usesAspnet = false;
         try
         {
             using (PdfDocument document = PdfDocument.Open(relativePath))
@@ -23,48 +24,29 @@ public class PDFReader
                 {
                     counter++;
                     Console.WriteLine($"Reading page: {counter}.");
-                    var pageText = page.Text;
-                    // Console.WriteLine(pageText);
-                    // Console.WriteLine("------------------------");
-                    // Console.WriteLine();
-                    // Console.WriteLine($"The candidates skills on page {counter}: ");
+                    var pageText = page.Text.ToLower();
                     Console.WriteLine("------------------------");
 
-                    if (pageText.ToLower().Contains("visual studio"))
+                    if (pageText.Contains("visual studio"))
                     {
-                        //Console.WriteLine("This candidate can use visual studio.");
                         usesVisualStudio = true;
                     }
 
-                    if (pageText.ToLower().Contains("c#"))
+                    if (pageText.Contains("c#"))
                     {
-                        //Console.WriteLine("This candidate uses C#.");
                         usesCSharp = true;
                     }
-                    // else
-                    // {
-                    //     Console.WriteLine("This candidate is not eligible.");
-                    // }
 
-                    // switch (true)
-                    // {
-                    //     case var _ when pageText.ToLower().Contains("simple"):
-                    //         Console.WriteLine("document contains the word simple");
-                    //         break;
-                    //     case var _ when pageText.ToLower().Contains("doc"):
-                    //         Console.WriteLine("document contains the word doc");
-                    //         break;
-                    //     default:
-                    //         Console.WriteLine("no specific word found.");
-                    //         break;
-                    // }
+                    if (pageText.Contains("asp.net"))
+                    {
+                        usesAspnet = true;
+                    }
 
-
-                    //Console.WriteLine(pageText);
-                    // foreach(Word word in page.GetWords())
-                    // {
-                    //     Console.WriteLine(word.Text);
-                    // }
+                    if (pageText.Contains("sql"))
+                    {
+                        usesSql = true;
+                    }
+                    
                 }
             }
         }
@@ -73,16 +55,26 @@ public class PDFReader
             Console.WriteLine(e.Message);
         }
 
-        if (usesCSharp == true)
+        if (usesCSharp)
         {
             Console.WriteLine("Language: C#");
         }
 
-        if (usesVisualStudio == true)
+        if (usesAspnet)
+        {
+            Console.WriteLine("Framework: ASP.NET");
+        }
+
+        if (usesVisualStudio)
         {
             Console.WriteLine("IDE: Visual Studio");
         }
-        else
+
+        if (usesSql)
+        {
+            Console.WriteLine("Database: SQL");
+        }
+        else if(!usesCSharp && !usesAspnet && !usesVisualStudio && !usesSql)
         {
             Console.WriteLine("This candidate does not have tools and languages you are looking for.");
         }
