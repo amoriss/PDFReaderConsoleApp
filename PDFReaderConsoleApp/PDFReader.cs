@@ -17,6 +17,7 @@ public class PDFReader
         bool usesAspnet = false;
         try
         {
+            //using statement makes sure resources are properly disposed of after use.
             using (PdfDocument document = PdfDocument.Open(relativePath))
             {
                 int counter = 0;
