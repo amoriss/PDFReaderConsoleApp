@@ -2,9 +2,9 @@
 using PDFReaderConsoleApp.Models;
 
 //PDFReader.ReadAllPagesFromResume();
-var resumeText = PDFReader.GetFullResumeTextAsString();
+var resumeText = PdfReader.GetFullResumeTextAsString();
 var applicant1 = new BackEndSkills();
-PDFReader.SetSkillsFromResume(resumeText, applicant1);
+SkillsFinder.FindBackEndSkillsFromResume(resumeText, applicant1);
 Console.WriteLine();
 Console.WriteLine();
-PDFReader.GetSkillsFromResume(applicant1);
+DisplaySkills.DisplayBackEndSkillsFromResume(applicant1);
