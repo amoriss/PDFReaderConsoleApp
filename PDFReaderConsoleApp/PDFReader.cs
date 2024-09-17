@@ -11,7 +11,7 @@ public class PDFReader
     private static readonly string _relativePath =
         //concatenate path
         Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "FakeResume_1.pdf");
-    
+
     public static void ReadAllPagesFromResume()
     {
         try
@@ -40,18 +40,14 @@ public class PDFReader
     {
         try
         {
-            //using statement makes sure resources are properly disposed of after use.
             using (PdfDocument document = PdfDocument.Open(_relativePath))
             {
-               // int counter = 0;
                 string pageText = string.Empty;
                 foreach (Page page in document.GetPages())
                 {
-                    //counter++;
-                    //Console.WriteLine($"Reading page: {counter}.");
                     pageText += page.Text.ToLower();
-                    //Console.WriteLine("------------------------");
                 }
+
                 return pageText;
             }
         }
@@ -62,51 +58,52 @@ public class PDFReader
         }
     }
 
-    public static void SetSkillsFromResume(string pageText, Skills skills)
+    public static void SetSkillsFromResume(string pageText, BackEndSkills backEndSkills)
     {
         if (pageText.Contains("visual studio"))
         {
-            skills.UsesVisualStudio = true;
+            backEndSkills.UsesVisualStudio = true;
         }
 
         if (pageText.Contains("c#"))
         {
-            skills.UsesCSharp = true;
+            backEndSkills.UsesCSharp = true;
         }
 
-        if (pageText.Contains("asp.net"))
+        if (pageText.Contains("asp.net") || (pageText.Contains("asp")))
         {
-            skills.UsesAspnet = true;
+            backEndSkills.UsesAspnet = true;
         }
 
         if (pageText.Contains("sql"))
         {
-            skills.UsesSql = true;
+            backEndSkills.UsesSql = true;
         }
     }
 
-    public static void GetSkillsFromResume(Skills skills)
+    public static void GetSkillsFromResume(BackEndSkills backEndSkills)
     {
-        if (skills.UsesCSharp)
+        if (backEndSkills.UsesCSharp)
         {
             Console.WriteLine("Language: C#");
         }
 
-        if (skills.UsesAspnet)
+        if (backEndSkills.UsesAspnet)
         {
             Console.WriteLine("Framework: ASP.NET");
         }
 
-        if (skills.UsesVisualStudio)
+        if (backEndSkills.UsesVisualStudio)
         {
             Console.WriteLine("IDE: Visual Studio");
         }
 
-        if (skills.UsesSql)
+        if (backEndSkills.UsesSql)
         {
             Console.WriteLine("Database: SQL");
         }
-        else if (!skills.UsesCSharp && !skills.UsesAspnet && !skills.UsesVisualStudio && !skills.UsesSql)
+        else if (!backEndSkills.UsesCSharp && !backEndSkills.UsesAspnet && !backEndSkills.UsesVisualStudio &&
+                 !backEndSkills.UsesSql)
         {
             Console.WriteLine("This candidate does not have tools and languages you are looking for.");
         }
