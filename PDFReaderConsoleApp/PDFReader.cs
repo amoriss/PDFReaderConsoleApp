@@ -11,12 +11,7 @@ public class PDFReader
     private static readonly string _relativePath =
         //concatenate path
         Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "FakeResume_1.pdf");
-
-    public static void PrintTextFromPDFToConsole()
-    {
-       
-    }
-
+    
     public static void ReadAllPagesFromResume()
     {
         try
@@ -28,8 +23,9 @@ public class PDFReader
                 foreach (Page page in document.GetPages())
                 {
                     counter++;
-                    Console.WriteLine($"Reading page: {counter}.");
-                    var pageText = page.Text.ToLower();
+                    Console.WriteLine($"Reading page: {counter}:");
+                    Console.WriteLine();
+                    Console.WriteLine(page.Text);
                     Console.WriteLine("------------------------");
                 }
             }
@@ -37,6 +33,32 @@ public class PDFReader
         catch (Exception e)
         {
             Console.WriteLine(e.Message);
+        }
+    }
+
+    public static string GetFullResumeTextAsString()
+    {
+        try
+        {
+            //using statement makes sure resources are properly disposed of after use.
+            using (PdfDocument document = PdfDocument.Open(_relativePath))
+            {
+               // int counter = 0;
+                string pageText = string.Empty;
+                foreach (Page page in document.GetPages())
+                {
+                    //counter++;
+                    //Console.WriteLine($"Reading page: {counter}.");
+                    pageText += page.Text.ToLower();
+                    //Console.WriteLine("------------------------");
+                }
+                return pageText;
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            return null;
         }
     }
 
