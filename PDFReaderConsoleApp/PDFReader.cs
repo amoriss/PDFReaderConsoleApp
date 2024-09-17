@@ -9,6 +9,8 @@ public class PDFReader
 {
     public static void PrintTextFromPDFToConsole()
     {
+        
+        //concatenate path
         string relativePath =
             Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "FakeResume_1.pdf");
         bool usesCSharp = false;
