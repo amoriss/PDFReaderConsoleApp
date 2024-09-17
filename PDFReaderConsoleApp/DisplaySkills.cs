@@ -28,7 +28,30 @@ public class DisplaySkills
         else if (!backEndSkills.UsesCSharp && !backEndSkills.UsesAspnet && !backEndSkills.UsesVisualStudio &&
                  !backEndSkills.UsesSql)
         {
-            Console.WriteLine("This candidate does not have tools and languages you are looking for.");
+            Console.WriteLine("This candidate does not have any back-end skills.");
+        }
+    }
+
+    public static void DisplayFrontEndSkillsFromResume(FrontEndSkills frontEndSkills)
+    {
+        if (frontEndSkills.UsesJavaScript)
+        {
+            Console.WriteLine("Language: JavaScript");
+        }
+
+        if (frontEndSkills.UsesCss)
+        {
+            Console.WriteLine("Language: JavaScript");
+        }
+
+        if (frontEndSkills.UsesReact)
+        {
+            Console.WriteLine("Framework: React");
+        }
+        
+        else if (!frontEndSkills.UsesJavaScript || !frontEndSkills.UsesCss || !frontEndSkills.UsesReact)
+        {
+            Console.WriteLine("This candidate does not have front-end skills.");
         }
     }
 }

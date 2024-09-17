@@ -26,4 +26,22 @@ public static class SkillsFinder
             backEndSkills.UsesSql = true;
         }
     }
+
+    public static void FindFrontEndSkillsFromResume(string pageText, FrontEndSkills frontEndSkills)
+    {
+        if (pageText.Contains("javascript"))
+        {
+            frontEndSkills.UsesJavaScript = true;
+        }
+
+        if (pageText.Contains("css"))
+        {
+            frontEndSkills.UsesCss = true;
+        }
+
+        if (pageText.Contains("react"))
+        {
+            frontEndSkills.UsesReact = true;
+        }
+    }
 }
